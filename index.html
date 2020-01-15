@@ -6,20 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Secrets</title>
+    <style>
+    .row{
+        margin-top: 25vh;
+    }
+    </style>
 </head>
 <body>
     <div class="row">
         <div class="col s8 offset-s2">
-            <div class="card-panel">
+            <div id="message-form" class="card-panel">
                 <form action="">
                     <label for="">Enter A secret Message</label>
                     <input id="message-input" type="text"/>
                     <button class="btn"> Create</button>
                 </form>
             </div>
-            <div class="">
-                share this link with a friend
-                <input id="link-input" type="text"/>
+            <div id="link-form" class="card-panel hide"> 
+
+                <div>
+                    share this link with a friend
+                    <input id="link-input" type="text"/>
+                </div>
             </div>
         </div>
     </div>
