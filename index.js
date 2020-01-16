@@ -1,14 +1,28 @@
+const { hash } = window.location;
+console.log("hash",hash)
+const message = atob(hash.replace('#',""))
+console.log(message)
+if(message){
+    document.querySelector('#message-form').classList.add('hide')
+    document.querySelector('#message-show').classList.remove('hide')
+    document.querySelector('h1').innerHTML = message;
+    // console.log(message)
+
+}
+
+
 
 document.querySelector('form').addEventListener('submit',event=>{
     event.preventDefault();
     document.querySelector('#message-form').classList.add('hide');
     document.querySelector('#link-form').classList.remove('hide');
 
-    const input = document.querySelector('#message-input');
+    const input = document.querySelector('#message-input').value;
     const encrypted = btoa(input);
     const linkInput= document.querySelector('#link-input')
    
    linkInput.value = `${window.location}#${encrypted}`;
    linkInput.select() 
+ 
     
 })
